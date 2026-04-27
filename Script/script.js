@@ -1,12 +1,19 @@
 function scrollToContact() {
-    document.getElementById("contact").scrollIntoView({
-        behavior: "smooth"
-    });
+    const contact = document.getElementById("contact");
+    if (contact) {
+        contact.scrollIntoView({ behavior: "smooth" });
+    }
 }
 
+const form = document.getElementById("contactForm");
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    document.getElementById("formMessage").textContent = "Message sent! I'll get back to you soon.";
-});
+        const message = document.getElementById("formMessage");
+        if (message) {
+            message.textContent = "Message sent! I'll get back to you soon.";
+        }
+    });
+}
